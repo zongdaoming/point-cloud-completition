@@ -21,7 +21,7 @@ pip install -r requirements/data-requirements.txt
 
 ## Download Dataset
 
-Download the [completion3D dataset](http://www.completion3D.stanford.edu). You should have the following direcory structure
+Download the [completion3D dataset](https://completion3d.stanford.edu/). You should have the following direcory structure
 
 ```
 data

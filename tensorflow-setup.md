@@ -19,6 +19,16 @@ export PATH=/usr/local/cuda/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 ```
 
+FQA: How to install CUDA 9.0 (linux)?
+```
+!wget https://developer.nvidia.com/compute/cuda/9.0/Prod/local_installers/cuda-repo-ubuntu1604-9-0-local_9.0.176-1_amd64-deb
+!dpkg -i cuda-repo-ubuntu1604-9-0-local_9.0.176-1_amd64-deb
+!apt-key add /var/cuda-repo-9-0-local/7fa2af80.pub
+!apt-get update
+!apt-get install cuda=9.0.176-1
+```
+
+
 ## Tensorflow Python Environment
 
 ```
@@ -37,6 +47,21 @@ cd utils/pc_distance
 make
 cd ../../../
 ```
+
+QA: Somehow your local TF path was not the same as used in the `make` script, which leads to the "missing" c++ header files. You need change:
+
+`original path`
+```
+tf_inc=$(PYTHON_DIR)/lib/python3.6/site-packages/tensorflow/include
+tf_lib=$(PYTHON_DIR)/lib/python3.6/site-packages/tensorflow
+```
+to 
+`real path`
+```
+tf_inc=/usr/local/lib/python3.6/dist-packages/tensorflow/include
+tf_lib=/usr/local/lib/python3.6/dist-packages/tensorflow
+```
+
 
 ## Run Tensorflow Training/Testing
 

@@ -46,7 +46,7 @@ chmod +x make.sh
 ./make.sh
 cd ../
 python build.py
-cd ../../../
+cd ../../../in
 ```
 
 ## Run Pytorch Training/Testing
